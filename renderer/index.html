@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self' file:; script-src 'self' file:; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;"
+        />
+        <title>TJALens</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <button id="openBtn">Open TJA…</button>
+                <span id="fileName" class="file">(no file)</span>
+                <span id="status" class="status">idle</span>
+            </div>
+            <div id="stats" class="stats"></div>
+        </header>
+
+        <main>
+            <section class="grid">
+                <div class="card"><canvas id="chartTotal"></canvas></div>
+                <div class="card radar"><canvas id="chartRadar"></canvas></div>
+                <div class="card"><canvas id="chartDensity"></canvas></div>
+                <div class="card"><canvas id="chartSwitch"></canvas></div>
+                <div class="card"><canvas id="chartComplexity"></canvas></div>
+                <div class="card"><canvas id="chartRepetition"></canvas></div>
+            </section>
+
+            <section class="card patterns">
+                <h3>Pattern repetition (top 12 by global count)</h3>
+                <table id="patternsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Pattern (16 slots)</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+
+        <script src="chart.umd.js"></script>
+        <script src="renderer.js"></script>
+    </body>
+</html>

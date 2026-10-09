@@ -1,0 +1,42 @@
+{
+  "name": "tjalens",
+  "version": "0.1.0",
+  "description": "TJALens - real-time TJA chart difficulty analyzer",
+  "main": "main.js",
+  "author": "Weicao-CatilGrass",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "analyze": "node src/test-analyze.js",
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.weicao.tjalens",
+    "productName": "TJALens",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "TJALens.${ext}"
+    }
+  }
+}
